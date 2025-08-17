@@ -4,7 +4,9 @@
     'depends':['base'],
     'data':[
         'data/ir_sequence.xml',
-       'views/root_menus.xml'
+       'views/root_menus.xml',
+       'views/uni_student_views.xml',
+       'views/uni_card_views.xml',
     ],
     'application':True
 }

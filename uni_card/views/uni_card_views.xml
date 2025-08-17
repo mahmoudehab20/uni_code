@@ -1,0 +1,8 @@
+<odoo>
+
+    <record id="uni_card_action" model="ir.actions.act_window">
+        <field name="name">Card</field>
+        <field name="res_model">uni.card</field>
+    </record>    
+
+</odoo>

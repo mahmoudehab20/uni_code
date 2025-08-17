@@ -9,13 +9,13 @@
         id="uni_card_menu"
         name="Cards"
         parent="uni_code_root_menu"
-        action=""    
+        action="uni_card_action"    
     />
 
     <menuitem 
         id="uni_student_menu"
         name="Students"
         parent="uni_code_root_menu"
-        action=""    
+        action="uni_student_action"    
     />
 </odoo>
