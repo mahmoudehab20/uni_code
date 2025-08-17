@@ -1,0 +1,21 @@
+<odoo>
+    <menuitem
+        id="uni_code_root_menu"
+        name="University Card"
+        web_icon="uni_card,static/description/icon.png"
+    />
+    
+    <menuitem 
+        id="uni_card_menu"
+        name="Cards"
+        parent="uni_code_root_menu"
+        action=""    
+    />
+
+    <menuitem 
+        id="uni_student_menu"
+        name="Students"
+        parent="uni_code_root_menu"
+        action=""    
+    />
+</odoo>
