@@ -36,7 +36,7 @@ class UniCard(models.Model):
                 rec.barcode = False
                 continue
 
-            data = f"{rec.ref}_{rec.name[:3]}{rec.end_date}"
+            data = f"{rec.ref}_{rec.name[:3]}_{rec.end_date}"
             img = qrcode.make(data)
             buffer = BytesIO()
             img.save(buffer, format='PNG')
