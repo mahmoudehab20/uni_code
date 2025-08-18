@@ -18,4 +18,11 @@
         parent="uni_code_root_menu"
         action="uni_student_action"    
     />
+
+    <menuitem 
+        id="uni_card_checker_menu"
+        name="Card Checker"
+        parent="uni_code_root_menu"
+        action="uni_card_checker_action"    
+    />
 </odoo>

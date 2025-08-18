@@ -24,9 +24,9 @@ class UniCard(models.Model):
         ('fourth','Fourth')
     ],related='student_id.academic_year')
     image=fields.Binary(related='student_id.image')
-    study_year=fields.Char(compute='_compute_study_date')
-    start_date=fields.Date(string='Date Issued')
-    end_date=fields.Date(string='Expire Date')
+    study_year=fields.Char(related='student_id.study_year')
+    start_date=fields.Date(string='Date Issued',related='student_id.start_date')
+    end_date=fields.Date(string='Expire Date',related='student_id.end_date')
     barcode = fields.Binary("QR Code", compute='_compute_qr_code')
 
     @api.depends('student_id')
@@ -42,14 +42,10 @@ class UniCard(models.Model):
             img.save(buffer, format='PNG')
             rec.barcode = base64.b64encode(buffer.getvalue())
 
-    @api.depends('start_date','end_date')
-    def _compute_study_date(self):
-        for rec in self:
-            if rec.start_date and rec.end_date:
-                rec.study_year=f"{rec.start_date.year } - {rec.end_date.year}"
-            else:
-                rec.study_year=""
+            if rec.barcode:
+                rec.student_id.state='valid'
 
+   
 
 
 
