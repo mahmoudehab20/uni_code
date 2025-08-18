@@ -57,7 +57,11 @@ class UniCardChecker(models.Model):
                 self.name=""
                 self.gender=""
                 self.academic_year=""
+                self.d
+                self.gender=""
+                self.academic_year=""
                 self.department=""
+                self.image=Falseepartment=""
                 self.image=False
 
                 return
@@ -67,6 +71,7 @@ class UniCardChecker(models.Model):
 
             # Search for the student
             student = self.env['uni.student'].search([('ref', '=', qr_value[0])])
+            
             if student:
                 self.is_valid = True
                 self.status="IS VALID!"
@@ -75,6 +80,7 @@ class UniCardChecker(models.Model):
                 self.academic_year=student.academic_year
                 self.department=student.department
                 self.image=student.image
+            
             if not student:
                 self.is_valid=False
                 self.status=""
