@@ -1,15 +1,44 @@
 <odoo>
 
-    <record id="uni_card_checker_view_tree" model="ir.ui.view">
+   <record id="uni_card_checker_view_tree" model="ir.ui.view">
         <field name="name">uni.card.checker.view.tree</field>
         <field name="model">uni.card.checker</field>
         <field name="arch" type="xml">
-            <tree decoration-success="is_valid"
-            decoration-danger="not is_valid">
-                <field name="card"/>
+            <tree decoration-success="is_valid" decoration-danger="not is_valid">
+                <field name="name"/>
                 <field name="status"/>
                 <field name="is_valid" invisible="1"/>
             </tree>
+        </field>
+    </record>
+
+    <record id="uni_card_checker_view_form" model="ir.ui.view">
+        <field name="name">uni.card.checker.view.form</field>
+        <field name="model">uni.card.checker</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <field name="image" widget="image" class="oe_avatar"/>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="status" readonly="1"
+                                decoration-success="is_valid" 
+                                decoration-danger="not is_valid"
+                            />
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="card" required="1"/>
+                            <field name="name"/>
+                            <field name="academic_year"/>
+                            <field name="department"/>
+                            <field name="gender"/>
+                            <field name="is_valid" invisible="1"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
         </field>
     </record>
 
