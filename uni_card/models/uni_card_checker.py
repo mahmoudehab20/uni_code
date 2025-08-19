@@ -57,11 +57,9 @@ class UniCardChecker(models.Model):
                 self.name=""
                 self.gender=""
                 self.academic_year=""
-                self.d
                 self.gender=""
                 self.academic_year=""
                 self.department=""
-                self.image=Falseepartment=""
                 self.image=False
 
                 return
