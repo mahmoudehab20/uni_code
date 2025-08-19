@@ -4,8 +4,6 @@ import random
 class UniStudent(models.Model):
     _name='uni.student'
 
-    
-   
     ref=fields.Char(default='new',string='ID',readonly=True)
     name=fields.Char()
     department=fields.Selection([
